@@ -1,0 +1,53 @@
+컴포넌트: html 요소들을 반환하는 함수
+
+기초 문법
+1. 태그는 항상 닫혀있어야 함.
+<div> </div> << 닫는 태그가 필수
+
+컴포넌트와 같이 태그와 태그 사이에 내용이 들어가지 않는 self closing 태그를 사용할 수도 있음.
+<App />
+
+
+2. 함수형 컴포넌트의 이름은 항상 대문자로 시작
+function App(){
+
+}
+
+
+3. 두 개 이상의 태그는 항상 하나의 태그 안에 담겨있어야 함.
+<div>
+    <Hello />
+    <div></div>
+</div>
+또는 아래와 같이 이름이 없는 태그인 fragment를 이용할 수 있다.
+<>
+    <Hello />
+    <div></div>
+</>
+
+
+4. 자바스크립트 값 및 표현식을 사용할 땐 {} 안에 넣어야 함.
+
+변수명 자체를 적지 않고 변수명을 중괄호 안에 넣는다.
+<div>{hello}</div>
+
+
+5. 한 번에 하나의 컴포넌트만 렌더링(출력)할 수 있다.
+
+ReactDOM.render(<App/>, document.getElementById('root'));
+아래는 불가능
+ReactDOM.render(<App/><Test/>, document.getElementById('root'));
+
+
+6. class 설정은 className으로 설정
+
+
+7. 이벤트는 camelCase(각 단어의 첫 글자는 소문자인데, 나머지 첫 단어 글자는 대문자로)로 작성,
+타겟(중괄호)에 등록 시 함수명만 적기
+
+const onIncrease = () => {
+    ...
+}
+
+onClick={함수명}과 같이 작성
+<button onClick = {onIncrease}> +1 </button>
